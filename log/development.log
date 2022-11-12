@@ -1,0 +1,21 @@
+Started GET "/" for 127.0.0.1 at 2022-11-12 17:12:20 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 36.2ms | Allocations: 672)
+Completed 200 OK in 338ms (Views: 125.3ms | ActiveRecord: 0.0ms | Allocations: 6561)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-12 17:16:07 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 351)
+Completed 200 OK in 17ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1102)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-12 17:20:09 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 17ms (Views: 1.0ms | Allocations: 217)
+
+
