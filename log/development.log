@@ -26,3 +26,363 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 16ms (Views: 1.2ms | Allocations: 216)
 
 
+Started GET "/" for 127.0.0.1 at 2022-11-12 18:50:03 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.3ms | Allocations: 560)
+Completed 200 OK in 137ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 5208)
+
+
+Started GET "/" for ::1 at 2022-11-12 19:14:16 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 351)
+Completed 200 OK in 21ms (Views: 2.9ms | Allocations: 1102)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-12 19:14:20 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 26ms (Views: 1.2ms | Allocations: 217)
+
+
+Started GET "/" for ::1 at 2022-11-12 19:14:22 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 19ms (Views: 1.1ms | Allocations: 211)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:14:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 31.8ms | Allocations: 672)
+Completed 200 OK in 494ms (Views: 188.9ms | ActiveRecord: 0.0ms | Allocations: 6559)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:15:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.7ms | Allocations: 351)
+Completed 200 OK in 37ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 1102)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:15:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 33ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 217)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:16:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.6ms | Allocations: 560)
+Completed 200 OK in 135ms (Views: 30.9ms | ActiveRecord: 0.0ms | Allocations: 5208)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:16:29 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.3ms | Allocations: 351)
+Completed 200 OK in 26ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 1102)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:18:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 22ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 217)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:27:30 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 15)
+Completed 200 OK in 26ms (Views: 1.7ms | Allocations: 211)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:30:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 20ms (Views: 1.4ms | Allocations: 216)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:31:13 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 351)
+Completed 200 OK in 40ms (Views: 5.1ms | Allocations: 1104)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:31:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 20ms (Views: 1.3ms | Allocations: 212)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:32:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 350)
+Completed 200 OK in 41ms (Views: 5.5ms | Allocations: 1099)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:32:17 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 23ms (Views: 1.2ms | Allocations: 212)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:32:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.2ms | Allocations: 350)
+Completed 200 OK in 29ms (Views: 6.4ms | Allocations: 1095)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:41:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 20ms (Views: 1.4ms | Allocations: 212)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:41:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 15)
+Completed 200 OK in 22ms (Views: 1.4ms | Allocations: 211)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:41:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 15)
+Completed 200 OK in 28ms (Views: 4.5ms | Allocations: 211)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:41:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 15)
+Completed 200 OK in 22ms (Views: 2.2ms | Allocations: 211)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:41:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 15)
+Completed 200 OK in 26ms (Views: 1.8ms | Allocations: 211)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:43:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.1ms | Allocations: 560)
+Completed 200 OK in 244ms (Views: 63.9ms | ActiveRecord: 0.0ms | Allocations: 5208)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:43:54 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 351)
+Completed 200 OK in 22ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1102)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:48:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 351)
+Completed 200 OK in 33ms (Views: 3.2ms | Allocations: 1098)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:48:17 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 35ms (Views: 1.4ms | Allocations: 217)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:49:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 30ms (Views: 1.4ms | Allocations: 212)
+
+
+Started GET "/" for ::1 at 2022-11-12 19:49:59 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.9ms | Allocations: 560)
+Completed 200 OK in 113ms (Views: 29.3ms | ActiveRecord: 0.0ms | Allocations: 5223)
+
+
+Started GET "/" for ::1 at 2022-11-12 19:50:02 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.3ms | Allocations: 351)
+Completed 200 OK in 67ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 1104)
+
+
+Started GET "/" for ::1 at 2022-11-12 19:50:04 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 217)
+
+
+Started GET "/" for ::1 at 2022-11-12 19:50:13 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ckomus/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 216)
+
+
+Started GET "/welcome" for ::1 at 2022-11-12 19:50:22 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/welcome"):
+  
+Started GET "/" for ::1 at 2022-11-12 19:50:59 -0600
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1903)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 1970)
+Completed 500 Internal Server Error in 51ms (Allocations: 2833)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"import"}):
+    24:       <li class="list-group-item">Associated labels and releases/reprints</li>
+    25:     </ul>
+    26: 
+    27:     <%= link_to 'Get started...', { controller: "import", action: "index" }, class: "btn btn-md btn-secondary m-2" %>
+    28:   </div>
+    29: </header>
+  
+app/views/welcome/index.html.erb:27
+Started GET "/" for ::1 at 2022-11-12 19:52:00 -0600
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 2205.0ms | Allocations: 91350)
+Completed 200 OK in 2259ms (Views: 2220.8ms | Allocations: 92242)
+
+
+Started GET "/" for ::1 at 2022-11-12 19:52:12 -0600
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 83.9ms | Allocations: 2671)
+Completed 200 OK in 105ms (Views: 85.4ms | Allocations: 2913)
+
+
+Started GET "/about" for ::1 at 2022-11-12 19:52:22 -0600
+Processing by WelcomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/about.html.erb within layouts/application
+  Rendered welcome/about.html.erb within layouts/application (Duration: 10.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 104.4ms | Allocations: 2793)
+Completed 200 OK in 129ms (Views: 105.5ms | Allocations: 3086)
+
+
+Started GET "/about" for 172.18.0.1 at 2022-11-13 01:53:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/about.html.erb within layouts/application
+  Rendered welcome/about.html.erb within layouts/application (Duration: 16.9ms | Allocations: 323)
+  Rendered layout layouts/application.html.erb (Duration: 2741.3ms | Allocations: 92400)
+Completed 200 OK in 2895ms (Views: 2778.3ms | ActiveRecord: 0.0ms | Allocations: 97204)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:53:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 127.6ms | Allocations: 2796)
+Completed 200 OK in 164ms (Views: 130.5ms | ActiveRecord: 0.0ms | Allocations: 3094)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:54:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 100.2ms | Allocations: 3081)
+Completed 200 OK in 133ms (Views: 111.1ms | ActiveRecord: 0.0ms | Allocations: 3976)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:54:47 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 104.8ms | Allocations: 3097)
+Completed 200 OK in 144ms (Views: 118.1ms | ActiveRecord: 0.0ms | Allocations: 3992)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:54:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 114.8ms | Allocations: 3075)
+Completed 200 OK in 156ms (Views: 126.8ms | ActiveRecord: 0.0ms | Allocations: 3965)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:55:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 100.7ms | Allocations: 3075)
+Completed 200 OK in 138ms (Views: 113.5ms | ActiveRecord: 0.0ms | Allocations: 3970)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 01:56:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 87.5ms | Allocations: 2670)
+Completed 200 OK in 110ms (Views: 88.6ms | ActiveRecord: 0.0ms | Allocations: 2912)
+
+
