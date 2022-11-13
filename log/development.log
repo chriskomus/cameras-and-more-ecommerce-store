@@ -386,3 +386,135 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 110ms (Views: 88.6ms | ActiveRecord: 0.0ms | Allocations: 2912)
 
 
+Started GET "/" for 172.18.0.1 at 2022-11-13 17:02:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 92.9ms | Allocations: 2676)
+Completed 200 OK in 113ms (Views: 94.0ms | Allocations: 2919)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 17:08:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 86.0ms | Allocations: 2660)
+Completed 200 OK in 109ms (Views: 87.1ms | Allocations: 2901)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 18:04:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 77.5ms | Allocations: 2671)
+Completed 200 OK in 101ms (Views: 78.8ms | Allocations: 2914)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 18:22:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 66.7ms | Allocations: 2678)
+Completed 200 OK in 85ms (Views: 67.7ms | Allocations: 2919)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 18:27:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 85.0ms | Allocations: 2656)
+Completed 200 OK in 105ms (Views: 86.1ms | Allocations: 2897)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 18:38:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 90.1ms | Allocations: 2676)
+Completed 200 OK in 113ms (Views: 91.7ms | Allocations: 2917)
+
+
+  [1m[35m (436.8ms)[0m  [1m[35mCREATE DATABASE "ecommerce_db_development" ENCODING = 'unicode'[0m
+  [1m[35m (397.8ms)[0m  [1m[35mCREATE DATABASE "ecommerce_db_test" ENCODING = 'unicode'[0m
+Started GET "/" for 172.18.0.1 at 2022-11-13 18:59:09 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 98.6ms | Allocations: 2668)
+Completed 200 OK in 124ms (Views: 101.5ms | Allocations: 2909)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 18:59:53 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 85.9ms | Allocations: 2666)
+Completed 200 OK in 109ms (Views: 87.9ms | Allocations: 2907)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 18:59:54 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 85.2ms | Allocations: 2668)
+Completed 200 OK in 107ms (Views: 87.5ms | Allocations: 2909)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 19:00:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 105.5ms | Allocations: 2668)
+Completed 200 OK in 129ms (Views: 108.0ms | Allocations: 2909)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 19:00:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 118.3ms | Allocations: 2670)
+Completed 200 OK in 149ms (Views: 120.0ms | Allocations: 2911)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 19:01:30 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 90.3ms | Allocations: 2654)
+Completed 200 OK in 110ms (Views: 91.8ms | Allocations: 2895)
+
+
+Started GET "/" for 172.18.0.1 at 2022-11-13 19:01:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 121.9ms | Allocations: 2686)
+Completed 200 OK in 151ms (Views: 123.9ms | Allocations: 2927)
+
+
