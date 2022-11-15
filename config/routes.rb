@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   #
 
   get '/about', to: 'welcome#about', as: :about
+  get '/contact', to: 'welcome#contact', as: :contact
 end

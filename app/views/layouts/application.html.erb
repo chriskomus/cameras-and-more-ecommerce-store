@@ -5,29 +5,23 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-<header>
-  <%#= render 'layouts/navigation' %>
-</header>
-<main>
-  <section class="page-section tile">
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
-      <%#= render 'layouts/messages' %>
-      <%= yield %>
-    </div>
-  </section>
+<%= render 'layouts/header' %>
+<main class="container main" style="margin-top: 50px">
+  <%= render 'layouts/breadcrumb' %>
+  <%= render 'layouts/indicator' %>
+  <%= yield %>
 </main>
-<%#= render 'layouts/footer' %>
+<%= render 'layouts/footer' %>
 </body>
 </html>

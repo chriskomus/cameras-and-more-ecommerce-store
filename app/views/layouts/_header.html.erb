@@ -1,0 +1,39 @@
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container d-flex flex-grow-1">
+      <%= link_to '<i class="fa-solid fa-camera"></i> E-Commerce Project'.html_safe, root_path, class: 'navbar-brand' %>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#header-menu" aria-controls="header-menu" aria-expanded="false"
+              aria-label="Toggle Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="header-menu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link"
+               href="#">
+            <span
+              class="d-none d-xxl-inline"><i
+              class="fa-solid fa-circle ?>"></i> </span>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               href="#">
+            <span
+              class="d-none d-xxl-inline"><i
+              class="fa-solid fa-circle ?>"></i> </span>Contact Us</a>
+          </li>
+        </ul>
+        <div class="d-flex mb-0">
+          <div class="input-group">
+            <input type="text" class="form-control" id="site-search-input"
+                   name="site-search-input">
+            <button class="btn btn-secondary" type="button" id="search-button" name="search-button"
+                    data-bs-toggle="modal" data-bs-target="#search-popup">Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

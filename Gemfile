@@ -11,6 +11,9 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+gem 'bootstrap', '~> 5.2.1'
+gem 'jquery-rails'
+
 gem 'pg'
 
 gem 'activeadmin'
