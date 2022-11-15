@@ -5,7 +5,7 @@ ActiveAdmin.register Address do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :name, :email, :website, :phone, :fax, :company, :address_one, :address_two, :city, :province, :postal_code, :country, :notes
+  permit_params :name, :email, :website, :phone, :fax, :company, :address_one, :address_two, :city, :province, :postal_code, :country, :notes
   #
   # or
   #

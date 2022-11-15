@@ -5,7 +5,7 @@ ActiveAdmin.register SalesOrder do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :order_number, :tracking_number, :shipping, :prov_tax, :fed_tax, :due_date, :order_date
+  permit_params :order_number, :tracking_number, :shipping, :prov_tax, :fed_tax, :due_date, :order_date
   #
   # or
   #
