@@ -7,6 +7,7 @@ RUN bundle config --global frozen 1
 COPY Gemfile Gemfile.lock ./
 ADD . /Rails-Docker
 WORKDIR /Rails-Docker
+RUN gem install bundler:2.3.25
 RUN bundle install
 
 # Add a script to be executed every time the container starts.

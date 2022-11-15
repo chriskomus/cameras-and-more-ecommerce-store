@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.1"
 
+gem 'sassc-rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
@@ -10,6 +12,14 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 gem 'pg'
+
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
