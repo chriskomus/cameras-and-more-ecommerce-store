@@ -9,19 +9,22 @@
       </button>
       <div class="navbar-collapse collapse" id="header-menu">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link"
-               href="#">
-            <span
-              class="d-none d-xxl-inline"><i
-              class="fa-solid fa-circle ?>"></i> </span>About</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="d-none d-xxl-inline"><i class="fa-solid fa-layer-group"></i> </span>Categories</a>
+            <div class="dropdown-menu" data-bs-popper="none">
+              <% @categories.each do |category| %>
+                <%= link_to category.title, category, class: "dropdown-item" %>
+              <% end %>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link"
-               href="#">
-            <span
-              class="d-none d-xxl-inline"><i
-              class="fa-solid fa-circle ?>"></i> </span>Contact Us</a>
+            <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-shop ?>"></i></span> About'.html_safe, about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-envelope"></i></span> Contact'.html_safe, contact_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-user"></i></span> Admin'.html_safe, 'admin', class: "nav-link" %>
           </li>
         </ul>
         <div class="d-flex mb-0">
