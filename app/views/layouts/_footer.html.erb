@@ -5,7 +5,8 @@
         <h5 class="text-uppercase">Our Locations</h5>
         <ul class="list-unstyled mb-0">
           <li>
-            <i class="fa-solid fa-store"></i> 4321 Main St. </li>
+            <i class="fa-solid fa-store"></i> Cameras and More</li>
+          <li>4321 Main St. </li>
           <li>Winnipeg, MB</li>
           <li>R2Z 2X7</li>
           <li>
@@ -16,10 +17,10 @@
         <h5 class="text-uppercase">Quick Links</h5>
         <ul class="list-unstyled mb-0">
           <li>
-            <%= link_to 'About', about_path %>
+            <%= link_to 'About', static_page_path(1) %>
           </li>
           <li>
-            <%= link_to 'Contact Us', contact_path %>
+            <%= link_to 'Contact Us', static_page_path(2) %>
           </li>
           <li>
             <%= link_to 'Admin', '/admin' %>

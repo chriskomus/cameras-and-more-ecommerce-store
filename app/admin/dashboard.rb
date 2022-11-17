@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 ActiveAdmin.register_page "Dashboard" do
-  menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
+  menu false
+  # menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
 
   content title: proc { I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
@@ -14,18 +15,12 @@ ActiveAdmin.register_page "Dashboard" do
     #
     # columns do
     #   column do
-    #     panel "Recent Posts" do
+    #     panel "Recent Orders" do
     #       ul do
-    #         Post.recent(5).map do |post|
-    #           li link_to(post.title, admin_post_path(post))
+    #         SalesOrder.recent(10).map do |order|
+    #           li link_to(order.order_number, admin_sales_order_path(order))
     #         end
     #       end
-    #     end
-    #   end
-
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
     #     end
     #   end
     # end

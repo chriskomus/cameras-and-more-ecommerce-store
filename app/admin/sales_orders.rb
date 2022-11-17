@@ -1,4 +1,9 @@
 ActiveAdmin.register SalesOrder do
+  sidebar "Order Items", only: [:show, :edit] do
+    ul do
+      li link_to "Details", admin_sales_order_sales_order_details_path(resource)
+    end
+  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

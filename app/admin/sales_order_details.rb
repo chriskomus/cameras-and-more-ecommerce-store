@@ -1,11 +1,13 @@
 ActiveAdmin.register SalesOrderDetail do
+  belongs_to :sales_order
+  navigation_menu :project
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :quantity, :price, :shipped
+  permit_params :quantity, :price, :shipped
   #
   # or
   #

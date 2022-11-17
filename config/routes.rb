@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: "welcome#index"
 
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -9,12 +10,5 @@ Rails.application.routes.draw do
   resources :addresses
   resources :categories
   resources :products
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-  #
-
-  get '/about', to: 'welcome#about', as: :about
-  get '/contact', to: 'welcome#contact', as: :contact
+  resources :static_pages
 end
