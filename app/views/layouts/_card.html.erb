@@ -1,0 +1,16 @@
+<div class="card bg-dark text-white mb-3">
+  <% if defined?(heading) %>
+    <div class="card-header"><%= heading %></div>
+  <% end %>
+  <div class="card-body">
+    <% if defined?(body) %>
+      <p class="card-text"><%= body %></p>
+    <% end %>
+    <% if defined?(big_icon) %>
+      <div class="row">
+        <span class="text-center" style="font-size: 20em"><i class="fa-solid fa-<%= big_icon %>"></i></span>
+      </div>
+    <% end %>
+
+  </div>
+</div>

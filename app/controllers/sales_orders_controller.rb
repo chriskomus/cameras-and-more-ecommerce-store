@@ -21,40 +21,40 @@ class SalesOrdersController < ApplicationController
 
   # POST /sales_orders or /sales_orders.json
   def create
-    @sales_order = SalesOrder.new(sales_order_params)
-
-    respond_to do |format|
-      if @sales_order.save
-        format.html { redirect_to sales_order_url(@sales_order), notice: "Sales order was successfully created." }
-        format.json { render :show, status: :created, location: @sales_order }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @sales_order.errors, status: :unprocessable_entity }
-      end
-    end
+    # @sales_order = SalesOrder.new(sales_order_params)
+    #
+    # respond_to do |format|
+    #   if @sales_order.save
+    #     format.html { redirect_to sales_order_url(@sales_order), notice: "Sales order was successfully created." }
+    #     format.json { render :show, status: :created, location: @sales_order }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @sales_order.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /sales_orders/1 or /sales_orders/1.json
   def update
-    respond_to do |format|
-      if @sales_order.update(sales_order_params)
-        format.html { redirect_to sales_order_url(@sales_order), notice: "Sales order was successfully updated." }
-        format.json { render :show, status: :ok, location: @sales_order }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @sales_order.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @sales_order.update(sales_order_params)
+    #     format.html { redirect_to sales_order_url(@sales_order), notice: "Sales order was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @sales_order }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @sales_order.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /sales_orders/1 or /sales_orders/1.json
   def destroy
-    @sales_order.destroy
-
-    respond_to do |format|
-      format.html { redirect_to sales_orders_url, notice: "Sales order was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    # @sales_order.destroy
+    #
+    # respond_to do |format|
+    #   format.html { redirect_to sales_orders_url, notice: "Sales order was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
   end
 
   private

@@ -1,10 +1,7 @@
-<section class="page-section tile">
-  <div class="container">
+<%= render 'layouts/card', heading: Preference.find_by(setting: "homepage_title").value, body: Preference.find_by(setting: "homepage_body").value.html_safe %>
 
-    <h1>Index</h1>
-
-    <p>Test text.</p>
-
-  </div>
-</section>
-
+<div class="row" id="sortable-wrapper">
+  <% @products.each do |product| %>
+    <%= render product %>
+  <% end %>
+</div>

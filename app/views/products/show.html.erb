@@ -1,10 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<div class="card mt-4 bg-dark text-white mb-3">
+  <div class="card-header"><%= @product.title %></div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="http://localhost/coding/binpoint/public/images/products/3807-1650429044.jpg" class="rounded img-fluid" alt="<%= @product.title %>">
+      </div>
+      <div class="col-sm-8">
+        <h5><%= @product.title %></h5>
+        <% @product.categories.each do |category| %>
+          <h6><%= link_to category.title, category %></h6>
+        <% end %>
+        <h3><span class="badge rounded-pill bg-warning modal-price">
+          <%= render 'layouts/price', price: @product.price, list_price: @product.list_price %>
+        </span></h3>
+        <h6>SKU: <%= @product.sku %></h6>
+      </div>
+    </div>
 
-<%= render @product %>
-
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+    <div class="modal-desc">
+      <%= @product.description %>
+    </div>
+  </div>
 </div>

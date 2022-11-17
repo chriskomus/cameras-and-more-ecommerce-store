@@ -1,27 +1,24 @@
-<div id="<%= dom_id product %>">
-  <p>
-    <strong>Title:</strong>
-    <%= product.title %>
-  </p>
-
-  <p>
-    <strong>Sku:</strong>
-    <%= product.sku %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= product.quantity %>
-  </p>
-
+<div class="col-lg-4 col-sm-6 mb-3 sortable-item" id="<%= dom_id product %>">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="row" id="top-container-19">
+        <div class="col-sm-4">
+          <img class="rounded img-fluid" src="http://localhost/coding/binpoint/public/images/products/3807-1650429044_thumb.jpg" alt="<%= product.title %>">
+        </div>
+        <div class="col-sm-8" id="top-contents-container-19">
+          <h5 class="card-title"><%= product.title %></h5>
+          <% product.categories.each do |category| %>
+            <h6 class="card-subtitle text-muted"><%= link_to category.title, category %></h6>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <%= link_to '<i class="fa-solid fa-eye"></i> View'.html_safe, product, class: "btn btn-md btn-primary me-2" %>
+      <%= link_to '<i class="fa-solid fa-plus"></i> Add to Cart'.html_safe, '/', class: "btn btn-md btn-success me-2" %>
+    </div>
+    <div class="card-footer"><h5 class="text-warning">
+      <%= render 'layouts/price', price: product.price, list_price: product.list_price %>
+    </h5></div>
+  </div>
 </div>

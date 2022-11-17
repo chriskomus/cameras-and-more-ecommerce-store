@@ -13,6 +13,9 @@ module EcommerceInventoryManagement
 
     config.web_console.permissions = '172.18.0.1'
 
+    # Uncomment to override Rails error and show generic public facing 500 error page instead.
+    # config.exceptions_app = self.routes
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

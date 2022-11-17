@@ -5,12 +5,18 @@
         <h5 class="text-uppercase">Our Locations</h5>
         <ul class="list-unstyled mb-0">
           <li>
-            <i class="fa-solid fa-store"></i> Cameras and More</li>
-          <li>4321 Main St. </li>
-          <li>Winnipeg, MB</li>
-          <li>R2Z 2X7</li>
+            <i class="fa-solid fa-store"></i> <%= Preference.find_by(setting: "company_name").value %></li>
+          <li><%= Preference.find_by(setting: "company_address1").value %></li>
+          <% if Preference.find_by(setting: "company_address2").value.present? %>
+            <li><%= Preference.find_by(setting: "company_address2").value %></li>
+          <% end %>
+          <li><%= Preference.find_by(setting: "company_city").value %>
+            , <%= Preference.find_by(setting: "company_prov").value %></li>
+          <li><%= Preference.find_by(setting: "company_postalcode").value %></li>
+          <li><%= Preference.find_by(setting: "company_country").value %></li>
           <li>
-            <i class="fa-solid fa-phone"></i> 1 (204) 555-5555</li>
+            <i class="fa-solid fa-phone"></i> <%= Preference.find_by(setting: "company_phone").value %>
+          </li>
         </ul>
       </div>
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -30,6 +36,6 @@
     </div>
   </div>
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-    <p>(C) 2022 - Chris Komus</p>
+    <p><%= Preference.find_by(setting: "copyright").value %></p>
   </div>
 </footer>

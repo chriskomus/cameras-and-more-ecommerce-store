@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_categories
+  before_action :set_preferences
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -14,5 +15,9 @@ class ApplicationController < ActionController::Base
   private
   def set_categories
     @categories = Category.all
+  end
+
+  def set_preferences
+    @pref = Preference.all
   end
 end
