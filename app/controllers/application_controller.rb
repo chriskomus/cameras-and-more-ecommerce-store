@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   private
   def set_categories
-    @categories = Category.all
+    @categories = Category.all.sort_by &:title
   end
 
   def set_preferences
