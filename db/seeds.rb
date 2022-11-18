@@ -9,8 +9,7 @@ require "net/http"
 
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-
-# eBay 
+# eBay
 # ----
 
 class EbayService
@@ -59,73 +58,72 @@ class EbayService
       category = Category.where(title: category_title).first_or_create
       category.title = category_title
       category.description = lorem_ipsum_generator(1)
-      
+
       category.save
       category
     end
   end
 
   def add_products
-    @search_results.each_with_index do |s, i|
-      product_title = s["title"][0]
-      if Product.exists?(title: product_title)
-        @log.info "[Duplicate Item] #{product_title}. Item #{i + 1} of #{@search_results.count}"
-      else
-        @log.info "[Adding Item] #{product_title}. Item #{i + 1} of #{@search_results.count}"
+    if @search_results.present?
+      @search_results.each_with_index do |s, i|
+        product_title = s["title"][0]
+        if Product.exists?(title: product_title)
+          @log.info "[Duplicate Item] #{product_title}. Item #{i + 1} of #{@search_results.count}"
+        else
+          @log.info "[Adding Item] #{product_title}. Item #{i + 1} of #{@search_results.count}"
 
-        # image
-        @log.info s["galleryURL"][0]
+          # product details
+          product = Product.where(title: product_title).first_or_create
+          product.title = product_title
+          product.description = lorem_ipsum_generator(3)
+          product.sku = s["itemId"][0]
+          product.quantity = rand(0..100)
+          product.price = s["sellingStatus"][0]["currentPrice"][0]["__value__"]
 
-        # product details
-        product = Product.where(title: product_title).first_or_create
-        product.title = product_title
-        product.description = lorem_ipsum_generator(3)
-        product.sku = s["itemId"][0]
-        product.quantity = rand(0..100)
-        product.price = s["sellingStatus"][0]["currentPrice"][0]["__value__"]
+          # randomly create a list price
+          rand_list_price = rand(0..10)
+          product.list_price = product.price + rand_list_price if rand_list_price > 7
 
-        # randomly create a list price
-        rand_list_price = rand(0..10)
-        product.list_price = product.price + rand_list_price if rand_list_price > 7
-
-        # category
-        category_title = s["primaryCategory"][0]["categoryName"][0]
-        category = add_category(category_title)
-        product.categories << category unless product.categories.include?(category)
-
-        # secondary category
-        if s["secondaryCategory"].present?
-          category_title = s["secondaryCategory"][0]["categoryName"][0]
+          # category
+          category_title = s["primaryCategory"][0]["categoryName"][0]
           category = add_category(category_title)
           product.categories << category unless product.categories.include?(category)
-        end
 
-        product.save
+          # secondary category
+          if s["secondaryCategory"].present?
+            category_title = s["secondaryCategory"][0]["categoryName"][0]
+            category = add_category(category_title)
+            product.categories << category unless product.categories.include?(category)
+          end
+
+          # image
+          image_uri = s["galleryURL"][0]
+          @log.info image_uri
+
+          if image_uri.present?
+            # downloaded_image = URI.parse(image_uri).open
+            downloaded_image = open(image_uri)
+
+            product.main_image.attach(io: downloaded_image, filename: image_uri.split("/")[-1])
+          end
+
+          product.save
+        end
       end
+    else
+      @log.info "[No Items Found]"
     end
   end
 end
 
-ebay_service = EbayService.new('nikon')
-ebay_service.clear_database
-ebay_service.add_products
+search_terms = ["nikon", "canon camera", "dash cam", "security camera",
+                "webcam", "lens", "pentax", "kodak", "minolta", "camera",
+                "iphone", "tripod", "viewfinder"]
 
-ebay_service = EbayService.new('canon camera')
-ebay_service.add_products
-
-ebay_service = EbayService.new('dash cam')
-ebay_service.add_products
-
-ebay_service = EbayService.new('security camera')
-ebay_service.add_products
-
-ebay_service = EbayService.new('webcam')
-ebay_service.add_products
-
-ebay_service = EbayService.new('lens')
-ebay_service.add_products
-
-ebay_service = EbayService.new('camera')
-ebay_service.add_products
-
-ebay_service.log_database_count
+search_terms.each_with_index do |s, i|
+  ebay_service = EbayService.new(s)
+  ebay_service.clear_database if i.zero?
+  ebay_service.add_products
+  ebay_service.log_database_count
+end
