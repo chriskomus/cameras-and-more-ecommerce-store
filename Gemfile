@@ -20,7 +20,7 @@ gem 'activeadmin'
 
 gem 'ebay-ruby', '~> 0.4.1'
 
-gem 'tinymce-rails'
+gem 'activeadmin_froala_editor'
 
 gem "breadcrumbs_on_rails"
 

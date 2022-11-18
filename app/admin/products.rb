@@ -14,7 +14,7 @@ ActiveAdmin.register Product do
 
       f.input :title
       f.input :sku
-      f.input :description
+      f.input :description, as: :froala_editor
       f.input :quantity
       f.input :price
       f.input :list_price
