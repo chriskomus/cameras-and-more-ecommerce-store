@@ -2,10 +2,15 @@
   <div class="card-header"><%= @product.title %></div>
   <div class="card-body">
     <div class="row">
-      <div class="col-sm-4">
-        <img src="http://localhost/coding/binpoint/public/images/products/3807-1650429044.jpg" class="rounded img-fluid" alt="<%= @product.title %>">
-      </div>
-      <div class="col-sm-8">
+      <% if @product.main_image.attached? %>
+        <div class="col-sm-4">
+          <%= image_tag @product.main_image, alt: @product.title, class: "rounded img-fluid" %>
+        </div>
+        <% main_col_width = 8 %>
+      <% else %>
+        <% main_col_width = 12 %>
+      <% end %>
+      <div class="col-sm-<%= main_col_width %>">
         <h5><%= @product.title %></h5>
         <% @product.categories.each do |category| %>
           <h6><%= link_to category.title, category %></h6>
@@ -18,7 +23,7 @@
     </div>
 
     <div class="modal-desc">
-      <%= @product.description %>
+      <%= @product.description.html_safe %>
     </div>
   </div>
 </div>

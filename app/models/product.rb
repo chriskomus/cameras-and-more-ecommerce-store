@@ -8,4 +8,6 @@ class Product < ApplicationRecord
   validates_numericality_of :price, only_numeric: true, allow_nil: true
   validates_numericality_of :list_price, only_numeric: true, allow_nil: true
   validates_numericality_of :quantity, only_numeric: true, allow_nil: true
+
+  has_one_attached :main_image
 end
