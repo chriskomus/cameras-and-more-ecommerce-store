@@ -1,6 +1,7 @@
 <%= render 'layouts/card', heading: Preference.find_by(setting: "homepage_title").value, body: Preference.find_by(setting: "homepage_body").value.html_safe %>
 
 <div class="row" id="sortable-wrapper">
+  <%= paginate @products, remote: true %>
   <% @products.each do |product| %>
     <%= render product %>
   <% end %>

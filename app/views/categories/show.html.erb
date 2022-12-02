@@ -1,6 +1,7 @@
 <%= render 'layouts/card', heading: @category.title, body: @category.description.html_safe %>
 
 <div class="row" id="sortable-wrapper">
+  <%= paginate @category_products, remote: true %>
   <% @category_products.each do |product| %>
     <%= render product %>
   <% end %>

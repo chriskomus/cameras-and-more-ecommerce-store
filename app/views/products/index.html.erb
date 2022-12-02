@@ -1,4 +1,5 @@
 <div class="row" id="sortable-wrapper">
+  <%= paginate @products, remote: true %>
   <% @products.each do |product| %>
     <%= render product %>
   <% end %>

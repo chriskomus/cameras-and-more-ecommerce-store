@@ -7,13 +7,14 @@ class CategoriesController < ApplicationController
   def index
     add_breadcrumb "Products", products_path, :title => "Products"
 
-    @categories = Category.all
+    @categories = Category.page(params[:page])
   end
 
   # GET /categories/1 or /categories/1.json
   def show
     if @category.products.present?
-      @category_products = @category.products.sort_by &:title
+      # @category_products = @category.products.sort_by &:title
+      @category_products = @category.products.page(params[:page])
     else
       @category_products = []
     end
