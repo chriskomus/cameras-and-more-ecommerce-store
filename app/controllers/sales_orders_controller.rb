@@ -1,6 +1,8 @@
 class SalesOrdersController < ApplicationController
   before_action :set_sales_order, only: %i[ show edit update destroy ]
 
+  add_breadcrumb "Home", :root_path
+
   # GET /sales_orders or /sales_orders.json
   def index
     @sales_orders = SalesOrder.all

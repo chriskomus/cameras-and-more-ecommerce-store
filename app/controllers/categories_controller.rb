@@ -1,8 +1,12 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
 
+  add_breadcrumb "Home", :root_path
+
   # GET /categories or /categories.json
   def index
+    add_breadcrumb "Products", products_path, :title => "Products"
+
     @categories = Category.all
   end
 
@@ -13,6 +17,9 @@ class CategoriesController < ApplicationController
     else
       @category_products = []
     end
+
+    add_breadcrumb "Products", products_path, :title => "Products"
+    add_breadcrumb @category.title, @category, :title => @category.title
   end
 
   # GET /categories/new

@@ -1,6 +1,8 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: %i[ show edit update destroy ]
 
+  add_breadcrumb "Home", :root_path
+
   # GET /addresses or /addresses.json
   def index
     @addresses = Address.all

@@ -31,6 +31,8 @@ gem 'cancancan'
 gem 'draper'
 gem 'pundit'
 
+gem "breadcrumbs_on_rails"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
