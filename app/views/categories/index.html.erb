@@ -3,6 +3,7 @@
 <h1>Categories</h1>
 
 <div id="categories">
+  <%= paginate @categories, remote: true %>
   <% @categories.each do |category| %>
     <%= render category %>
     <p>

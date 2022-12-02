@@ -24,6 +24,7 @@ gem 'activeadmin_froala_editor'
 
 gem "breadcrumbs_on_rails"
 
+gem 'kaminari'
 
 # Plus integrations with:
 gem 'devise'

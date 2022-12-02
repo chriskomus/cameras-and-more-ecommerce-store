@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   def index
     add_breadcrumb "Products", products_path, :title => "Products"
 
-    @products = Product.all
+    @products = Product.page(params[:page])
   end
 
   # GET /products/1 or /products/1.json
