@@ -1,18 +1,27 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  add_breadcrumb "Home", :root_path
+
   # GET /products or /products.json
   def index
+    add_breadcrumb "Products", products_path, :title => "Products"
+
     @products = Product.all
   end
 
   # GET /products/1 or /products/1.json
   def show
+
     if @product.categories.present?
       @product_categories = @product.categories.sort_by &:title
     else
       @product_categories = []
     end
+
+    add_breadcrumb "Products", products_path, :title => "Products"
+    add_breadcrumb @product_categories[0].title, @product_categories[0], :title => @product_categories[0].title
+    add_breadcrumb @product.title, @album, title: @product.title
   end
 
   # GET /products/new

@@ -1,7 +1,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Controller</a></li>
-    <li class="breadcrumb-item"><a href="#">Category</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Page</li>
+    <%= render_breadcrumbs :tag => :li, :separator => "&nbsp/&nbsp", :class => "breadcrumb-item" %>
+<!--    <li class="breadcrumb-item"><a href="#">Controller</a></li>-->
+<!--    <li class="breadcrumb-item"><a href="#">Category</a></li>-->
+<!--    <li class="breadcrumb-item active" aria-current="page">Page</li>-->
   </ol>
 </nav>
