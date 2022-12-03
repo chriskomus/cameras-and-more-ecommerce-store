@@ -6,6 +6,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def authenticate_active_admin_user!
+    authenticate_admin_user!
+    unless current_admin_user.admin?
+      flash[:alert] = "Unauthorized Access!"
+      redirect_to "/admin/logout"
+    end
+  end
+
   add_flash_types :info, :error, :success
 
   rescue_from ActionController::Redirecting::UnsafeRedirectError do

@@ -25,6 +25,24 @@
           <li class="nav-item">
             <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-envelope"></i></span> Contact'.html_safe, static_page_path(2), class: "nav-link" %>
           </li>
+
+
+
+          <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-cart-shopping"></i></span> Cart'.html_safe, static_page_path(2), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-clock-rotate-left"></i></span> Past Orders'.html_safe, sales_orders_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-right-from-bracket"></i></span> Log-Out'.html_safe, '/users/sign_out', class: "nav-link" %>
+          </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-right-to-bracket"></i></span> Log-In'.html_safe, '/users/sign_in', class: "nav-link" %>
+            </li>
+            <% end %>
         </ul>
         <div class="d-flex mb-0">
           <div class="input-group">
