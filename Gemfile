@@ -26,6 +26,8 @@ gem "breadcrumbs_on_rails"
 
 gem 'kaminari'
 
+gem 'country_select', '~> 6.0'
+
 # Plus integrations with:
 gem 'devise'
 gem 'cancancan'

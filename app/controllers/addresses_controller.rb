@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  before_action :set_address, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, :set_address, only: %i[ show edit update destroy ]
 
   add_breadcrumb "Home", :root_path
 

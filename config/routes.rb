@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   # get 'errors/internal_server_error'
   root to: "welcome#index"
 
-
   devise_for :admin_users, ActiveAdmin::Devise.config
+  # devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
   resources :sales_order_details
   resources :sales_orders
