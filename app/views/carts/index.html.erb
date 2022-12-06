@@ -1,0 +1,61 @@
+<% if @count > 0 %>
+  <table class="table table-dark table-striped" data-toggle="table">
+    <caption class="d-none">Products</caption>
+    <thead class="align-middle">
+    <tr>
+      <th>
+        <a href="#" class="text-white text-decoration-none" data-sort-by="image" data-controller="products">Image</a>
+      </th>
+      <th>
+        <a href="#" class="text-white text-decoration-none" data-sort-by="title" data-controller="products">Product</a>
+      </th>
+      <th>
+        <a href="#" class="text-white text-decoration-none" data-sort-by="sku" data-controller="products">Sku</a>
+      </th>
+
+      <th>
+        <a href="#" class="text-white text-decoration-none" data-sort-by="sale price" data-controller="products">Price</a>
+      </th>
+      <th>
+        <a href="#" class="text-white text-decoration-none" data-sort-by="quantity" data-controller="products">Quantity</a>
+      </th>
+
+      <th>
+        <a href="#" class="text-white text-decoration-none" data-sort-by="image" data-controller="products">Remove</a>
+      </th>
+    </tr>
+    </thead>
+
+    <!-- START ITEM CONTENT  -->
+    <tbody id="sortable-wrapper" data-api="products" data-parameter="">
+    <% @products.each do |product| %>
+      <tr class="sortable-item" id="product-19" style="">
+        <td class="">
+          <% if product.main_image.attached? %>
+            <div class="col-sm-4">
+              <%= image_tag product.main_image, alt: product.title, class: "rounded img-fluid", style: "max-height: 70px;" %>
+            </div>
+          <% end %>
+        </td>
+        <td class=""><%= link_to product.title, product %></td>
+        <td class=""><%= product.sku %></td>
+        <td class=""><%= render 'layouts/price', price: product.price, list_price: product.list_price %></td>
+        <td class="">
+          <% cart_item = @cart_items.find { |ci| ci['product_id'] == product.id } %>
+          <% quantity = cart_item['quantity'] %>
+          <%= form_tag('/carts/update_cart?product_id=' + product.id.to_s) do |f| %>
+            <%= number_field_tag :quantity, quantity, style: "max-width: 50px" %>
+            <%= submit_tag 'Update', class: "btn btn-md btn-primary" %>
+          <% end %>
+        </td>
+
+        <td>
+          <%= button_to '<i class="fa-solid fa-delete-left"></i>'.html_safe, { controller: "carts", action: "remove_from_cart", product_id: product.id }, class: "btn btn-link btn-sm text-danger" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  Cart is empty.
+<% end %>
