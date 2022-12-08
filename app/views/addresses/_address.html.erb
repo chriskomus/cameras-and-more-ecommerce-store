@@ -1,67 +1,45 @@
-<div id="<%= dom_id address %>">
-  <p>
-    <strong>Name:</strong>
-    <%= address.name %>
-  </p>
+<div class="col-lg-4 col-sm-6 mb-3 sortable-item" id="<%= dom_id address %>">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="row" id="top-container-19">
+        <div class="col-sm-12">
+          <p>
+            <%= address.name %><br>
+            <% if address.company.present? %>
+              <%= address.company %><br>
+            <% end %>
+            <%= address.address_one %><br>
+            <% if address.address_two.present? %>
+              <%= address.address_two %><br>
+            <% end %>
+            <%= address.city %>, <%= address.province.name %><br>
+            <%= address.postal_code %><br>
+            <%= address.country %>
+          </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= address.email %>
-  </p>
+          <p>
+            <% if address.email.present? %>
+              <%= address.email %><br>
+            <% end %>
+            <% if address.phone.present? %>
+              Phone: <%= address.phone %><br>
+            <% end %>
+            <% if address.fax.present? %>
+              Fax: <%= address.fax %><br>
+            <% end %>
+          </p>
 
-  <p>
-    <strong>Website:</strong>
-    <%= address.website %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= address.phone %>
-  </p>
-
-  <p>
-    <strong>Fax:</strong>
-    <%= address.fax %>
-  </p>
-
-  <p>
-    <strong>Company:</strong>
-    <%= address.company %>
-  </p>
-
-  <p>
-    <strong>Address one:</strong>
-    <%= address.address_one %>
-  </p>
-
-  <p>
-    <strong>Address two:</strong>
-    <%= address.address_two %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= address.city %>
-  </p>
-
-  <p>
-    <strong>Province:</strong>
-    <%= address.province %>
-  </p>
-
-  <p>
-    <strong>Postal code:</strong>
-    <%= address.postal_code %>
-  </p>
-
-  <p>
-    <strong>Country:</strong>
-    <%= address.country %>
-  </p>
-
-  <p>
-    <strong>Notes:</strong>
-    <%= address.notes %>
-  </p>
-
+          <p>
+            <% if address.fax.present? %>
+              <%= address.notes %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= link_to '<i class="fa-solid fa-pen"></i>'.html_safe, edit_address_path(address), class: "btn btn-md btn-primary" %>
+      <%= button_to '<i class="fa-solid fa-delete-left"></i>'.html_safe, address, method: :delete, class: "btn btn-md btn-danger" %>
+    </div>
+  </div>
 </div>
