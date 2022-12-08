@@ -1,14 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<div class="card bg-dark text-white mb-3">
+  <div class="card-header">Addresses</div>
+  <div class="card-body">
+    <%= link_to "New address", new_address_path, class: "btn btn-md btn-primary mt-2" %>
+  </div>
+</div>
 
-<h1>Addresses</h1>
-
-<div id="addresses">
+<div class="row" id="sortable-wrapper">
   <% @addresses.each do |address| %>
     <%= render address %>
-    <p>
-      <%= link_to "Show this address", address %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New address", new_address_path %>
+

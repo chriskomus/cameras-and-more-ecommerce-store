@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_021329) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_003244) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,12 +66,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_021329) do
     t.string "address_one"
     t.string "address_two"
     t.string "city"
-    t.string "province"
     t.string "postal_code"
     t.string "country"
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "province_id", null: false
+    t.index ["province_id"], name: "index_addresses_on_province_id"
   end
 
   create_table "addresses_users", id: false, force: :cascade do |t|
@@ -135,6 +136,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_021329) do
     t.decimal "list_price"
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.decimal "pst"
+    t.decimal "gst"
+    t.decimal "hst"
+  end
+
   create_table "sales_order_details", force: :cascade do |t|
     t.integer "quantity"
     t.decimal "price"
@@ -179,6 +189,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_021329) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "provinces"
   add_foreign_key "carts", "products"
   add_foreign_key "carts", "users"
   add_foreign_key "sales_order_details", "sales_orders"

@@ -1,7 +1,7 @@
 <%= form_with(model: address) do |form| %>
   <% if address.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
+      <h5><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h5>
 
       <ul>
         <% address.errors.each do |error| %>
@@ -11,72 +11,98 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="row d-flex">
+    <div class="col-md-12 mx-auto">
+      <div class="card justify-content-center bg-dark text-white mb-3">
+        <div class="card-header">Add a New Address</div>
+        <div class="card-body">
+          <div class="form-group mb-3">
+            <%= form.label :name, class: "form-label" %>
+            <%= form.text_field :name, required: true, class: "form-control" %>
+          </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
+          <div class="form-group mb-3">
+            <%= form.label :company, class: "form-label" %>
+            <%= form.text_field :company, class: "form-control" %>
+          </div>
 
-  <div>
-    <%= form.label :website, style: "display: block" %>
-    <%= form.text_field :website %>
-  </div>
 
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
+          <div class="form-group mb-3">
+            <%= form.label :address_one, class: "form-label" %>
+            <%= form.text_field :address_one, required: true, class: "form-control" %>
+          </div>
 
-  <div>
-    <%= form.label :fax, style: "display: block" %>
-    <%= form.text_field :fax %>
-  </div>
+          <div class="form-group mb-3">
+            <%= form.label :address_two, class: "form-label" %>
+            <%= form.text_field :address_two, class: "form-control" %>
+          </div>
 
-  <div>
-    <%= form.label :company, style: "display: block" %>
-    <%= form.text_field :company %>
-  </div>
+          <div class="form-group mb-3">
+            <%= form.label :city, class: "form-label" %>
+            <%= form.text_field :city, required: true, class: "form-control" %>
+          </div>
 
-  <div>
-    <%= form.label :address_one, style: "display: block" %>
-    <%= form.text_field :address_one %>
-  </div>
+<!--          <div class="form-group mb-3">-->
+            <%#= form.label :province, class: "form-label" %>
+            <%#= form.text_field :province, required: true, class: "form-control" %>
+<!--          </div>-->
 
-  <div>
-    <%= form.label :address_two, style: "display: block" %>
-    <%= form.text_field :address_two %>
-  </div>
+          <div class="form-group mb-3">
+            <%= form.label :province_id, class: "form-label" %>
+            <%= form.select(:province_id, options_from_collection_for_select(Province.all, 'id', 'name'), {}, { :class => 'form-select' }) %>
+            <%#= form.collection_select(:province, Province.all, :id, :name, {:prompt => "Please Select..."}, {:multiple => false, :class=>'form-control'}) %>
+          </div>
 
-  <div>
-    <%= form.label :city, style: "display: block" %>
-    <%= form.text_field :city %>
-  </div>
+          <div class="form-group mb-3">
+            <%= form.label :postal_code, class: "form-label" %>
+            <%= form.text_field :postal_code, required: true, class: "form-control" %>
+          </div>
 
-  <div>
-    <%= form.label :province, style: "display: block" %>
-    <%= form.text_field :province %>
-  </div>
+<!--          <div class="form-group mb-3">-->
+            <%#= form.label :country, class: "form-label" %>
+            <%#= form.text_field :country, required: true, class: "form-control" %>
+<!--          </div>-->
 
-  <div>
-    <%= form.label :postal_code, style: "display: block" %>
-    <%= form.text_field :postal_code %>
-  </div>
+          <div class="form-group mb-3">
+            <%= form.label :country, class: "form-label" %>
+            <%= form.country_select :country, priority_countries = ["CA"], options = {:required => true}, html_options = {:class => "form-select"} %>
+          </div>
 
-  <div>
-    <%= form.label :country, style: "display: block" %>
-    <%= form.text_field :country %>
-  </div>
+          <hr>
 
-  <div>
-    <%= form.label :notes, style: "display: block" %>
-    <%= form.text_field :notes %>
-  </div>
+          <div class="form-group mb-3">
+            <%= form.label :email, class: "form-label" %>
+            <%= form.text_field :email, class: "form-control" %>
+          </div>
 
-  <div>
-    <%= form.submit %>
+          <div class="form-group mb-3">
+            <%= form.label :website, class: "form-label" %>
+            <%= form.text_field :website, class: "form-control" %>
+          </div>
+
+          <div class="form-group mb-3">
+            <%= form.label :phone, class: "form-label" %>
+            <%= form.text_field :phone, class: "form-control" %>
+          </div>
+
+          <div class="form-group mb-3">
+            <%= form.label :fax, class: "form-label" %>
+            <%= form.text_field :fax, class: "form-control" %>
+          </div>
+
+          <hr>
+
+          <div class="form-group mb-3">
+            <%= form.label :notes, class: "form-label" %>
+            <%= form.text_field :notes, class: "form-control" %>
+          </div>
+
+          <div>
+            <%= form.submit %>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
