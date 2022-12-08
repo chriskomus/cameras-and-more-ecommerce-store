@@ -1,37 +1,61 @@
 <div id="<%= dom_id sales_order %>">
-  <p>
-    <strong>Order number:</strong>
-    <%= sales_order.order_number %>
-  </p>
+  <div class="row">
+    <%= render @address, is_sales_order: true %>
+  </div>
 
-  <p>
-    <strong>Tracking number:</strong>
-    <%= sales_order.tracking_number %>
-  </p>
+  <table class="table table-dark table-striped" data-toggle="table">
+    <caption class="d-none">Cart</caption>
+    <thead class="align-middle">
+    <tr>
+      <th>Image</th>
+      <th>Product</th>
+      <th>Sku</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Shipped</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @products.each do |product| %>
+      <% order_item = @sales_order_details.find { |ci| ci.product_id == product.id } %>
+      <tr>
+        <td>
+          <% if product.main_image.attached? %>
+            <div class="col-sm-4">
+              <%= image_tag product.main_image, alt: product.title, class: "rounded img-fluid", style: "max-height: 70px;" %>
+            </div>
+          <% end %>
+        </td>
+        <td><%= product.title %></td>
+        <td><%= product.sku %></td>
+        <td><%= number_to_currency(order_item.price) %></td>
+        <td>
+          <%= order_item.quantity %>
+        </td>
 
-  <p>
-    <strong>Shipping:</strong>
-    <%= sales_order.shipping %>
-  </p>
+        <td>
 
-  <p>
-    <strong>Prov tax:</strong>
-    <%= sales_order.prov_tax %>
-  </p>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-  <p>
-    <strong>Fed tax:</strong>
-    <%= sales_order.fed_tax %>
-  </p>
-
-  <p>
-    <strong>Due date:</strong>
-    <%= sales_order.due_date %>
-  </p>
-
-  <p>
-    <strong>Order date:</strong>
-    <%= sales_order.order_date %>
-  </p>
-
+  <div class="card bg-dark text-white mb-3">
+    <div class="card-header">Order Summary</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12 text-end">
+          <% subtotal = calc_subtotal(@sales_order) %>
+          <strong>Subtotal: </strong><%= number_to_currency(subtotal) %><br>
+          <strong>Shipping: </strong><%= number_to_currency(@sales_order.shipping) %><br>
+          <hr>
+          <strong>PST: </strong><%= number_to_currency(@sales_order.prov_tax) %><br>
+          <strong>GST/HST: </strong><%= number_to_currency(@sales_order.fed_tax) %><br>
+          <hr>
+          <strong>Total: </strong><%= number_to_currency(subtotal + @sales_order.shipping.to_f + @sales_order.prov_tax.to_f + @sales_order.fed_tax.to_f) %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

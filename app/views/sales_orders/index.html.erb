@@ -1,14 +1,36 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Sales orders</h1>
-
-<div id="sales_orders">
-  <% @sales_orders.each do |sales_order| %>
-    <%= render sales_order %>
-    <p>
-      <%= link_to "Show this sales order", sales_order %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New sales order", new_sales_order_path %>
+<% if @sales_orders.length > 0 %>
+  <table class="table table-dark table-striped" data-toggle="table">
+    <caption class="d-none">Orders</caption>
+    <thead class="align-middle">
+    <tr>
+      <th>Order #</th>
+      <th>Tracking #</th>
+      <th>Address</th>
+      <th>Subtotal</th>
+      <th>Shipping</th>
+      <th>PST</th>
+      <th>GST/HST</th>
+      <th>Total</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @sales_orders.each do |sales_order| %>
+    <% subtotal = calc_subtotal(sales_order) %>
+      <tr>
+        <td><%= link_to sales_order.order_number, sales_order %></td>
+        <td><%= link_to sales_order.tracking_number, sales_order %></td>
+        <td><%= link_to sales_order.address.address_one, address_url(sales_order.address) %></td>
+        <td><%= number_to_currency(subtotal) %></td>
+        <td><%= number_to_currency(sales_order.shipping) %></td>
+        <td><%= number_to_currency(sales_order.prov_tax) %></td>
+        <td><%= number_to_currency(sales_order.fed_tax) %></td>
+        <td><%= number_to_currency(subtotal + sales_order.shipping.to_f + sales_order.prov_tax.to_f + sales_order.fed_tax.to_f) %></td>
+        <td></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  You haven't placed any orders yet.
+<% end %>

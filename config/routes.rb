@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'carts/add_to_cart'
   post 'carts/remove_from_cart'
   post 'carts/update_cart'
+  post 'carts/ship_to'
+  post 'sales_orders/submit_order'
 
   resources :sales_order_details
   resources :sales_orders

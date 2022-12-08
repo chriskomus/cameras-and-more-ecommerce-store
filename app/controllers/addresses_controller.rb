@@ -8,7 +8,11 @@ class AddressesController < ApplicationController
     add_breadcrumb "Addresses", addresses_path, :title => "Addresses"
 
     user = current_user
-    @addresses = user.addresses
+    if user.present?
+      @addresses = user.addresses
+    else
+      @addresses = []
+    end
   end
 
   # GET /addresses/1 or /addresses/1.json

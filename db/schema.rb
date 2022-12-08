@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_003244) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_184431) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -152,6 +152,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_003244) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "sales_order_id", null: false
+    t.bigint "product_id", null: false
+    t.index ["product_id"], name: "index_sales_order_details_on_product_id"
     t.index ["sales_order_id"], name: "index_sales_order_details_on_sales_order_id"
   end
 
@@ -165,6 +167,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_003244) do
     t.date "order_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "address_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["address_id"], name: "index_sales_orders_on_address_id"
+    t.index ["user_id"], name: "index_sales_orders_on_user_id"
   end
 
   create_table "static_pages", force: :cascade do |t|
@@ -192,5 +198,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_003244) do
   add_foreign_key "addresses", "provinces"
   add_foreign_key "carts", "products"
   add_foreign_key "carts", "users"
+  add_foreign_key "sales_order_details", "products"
   add_foreign_key "sales_order_details", "sales_orders"
+  add_foreign_key "sales_orders", "addresses"
+  add_foreign_key "sales_orders", "users"
 end

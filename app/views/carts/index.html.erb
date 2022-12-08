@@ -1,6 +1,6 @@
 <% if @count > 0 %>
   <table class="table table-dark table-striped" data-toggle="table">
-    <caption class="d-none">Products</caption>
+    <caption class="d-none">Cart</caption>
     <thead class="align-middle">
     <tr>
       <th>
@@ -25,22 +25,20 @@
       </th>
     </tr>
     </thead>
-
-    <!-- START ITEM CONTENT  -->
-    <tbody id="sortable-wrapper" data-api="products" data-parameter="">
+    <tbody>
     <% @products.each do |product| %>
-      <tr class="sortable-item" id="product-19" style="">
-        <td class="">
+      <tr>
+        <td>
           <% if product.main_image.attached? %>
             <div class="col-sm-4">
               <%= image_tag product.main_image, alt: product.title, class: "rounded img-fluid", style: "max-height: 70px;" %>
             </div>
           <% end %>
         </td>
-        <td class=""><%= link_to product.title, product %></td>
-        <td class=""><%= product.sku %></td>
-        <td class=""><%= render 'layouts/price', price: product.price, list_price: product.list_price %></td>
-        <td class="">
+        <td><%= link_to product.title, product %></td>
+        <td><%= product.sku %></td>
+        <td><%= render 'layouts/price', price: product.price, list_price: product.list_price %></td>
+        <td>
           <% cart_item = @cart_items.find { |ci| ci['product_id'] == product.id } %>
           <% quantity = cart_item['quantity'] %>
           <%= form_tag('/carts/update_cart?product_id=' + product.id.to_s) do |f| %>
@@ -56,6 +54,52 @@
     <% end %>
     </tbody>
   </table>
+
+  <div class="card bg-dark text-white mb-3">
+    <div class="card-header">Select An Address To Check Out</div>
+    <div class="card-body">
+      <% if user_signed_in? %>
+        <%= link_to "New address", new_address_path, class: "btn btn-md btn-primary mt-2" %>
+      <% else %>
+        Log in to check out.
+        <%= link_to '<i class="fa-solid fa-right-to-bracket"></i> Log-In'.html_safe, '/users/sign_in', class: "btn btn-md btn-success" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @addresses.each do |address| %>
+      <% is_ship_to = address == @ship_to_address %>
+      <%= render address, is_cart: true, is_ship_to: is_ship_to %>
+    <% end %>
+  </div>
+
+  <% if user_signed_in? && @ship_to_address.present? %>
+    <div class="card bg-dark text-white mb-3">
+      <div class="card-header">Order Summary</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 text-end">
+            <strong>Subtotal: </strong><%= number_to_currency(@sub_total) %><br>
+            <strong>Shipping: </strong><%= number_to_currency(@shipping) %><br>
+            <hr>
+            <strong>GST: </strong><%= number_to_currency(@gst) %><br>
+            <strong>PST: </strong><%= number_to_currency(@pst) %><br>
+            <strong>HST: </strong><%= number_to_currency(@hst) %><br>
+            <hr>
+            <strong>Total: </strong><%= number_to_currency(@total) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-end">
+            <%= button_to '<i class="fa-solid fa-cash-register"></i> Submit Order'.html_safe, { controller: "sales_orders", action: "submit_order", cart_items: @cart_items, ship_to_address: @ship_to_address}, class: "btn btn-lg btn-primary mt-2" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
 <% else %>
   Cart is empty.
 <% end %>
