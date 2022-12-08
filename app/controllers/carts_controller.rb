@@ -51,13 +51,15 @@ class CartsController < InheritedResources::Base
 
     if @cart_items.present?
       @count = @cart_items.length
+      shipping_price_per_item = Preference.find_by(setting: "shipping_price_per_item").value.to_f
+
       @cart_items.each do |item|
         product = Product.find_by_id(item['product_id'])
         @products.push(product)
 
         # Add to total
         @sub_total += product.price * item['quantity']
-        @shipping += 1.95
+        @shipping += shipping_price_per_item
       end
 
       @pst = (@sub_total + @shipping) * pst_rate
