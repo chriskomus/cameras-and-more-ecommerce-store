@@ -56,6 +56,53 @@
     <% end %>
     </tbody>
   </table>
+
+  <div class="card bg-dark text-white mb-3">
+    <div class="card-header">Select An Address To Check Out</div>
+    <div class="card-body">
+      <% if user_signed_in? %>
+        <%= link_to "New address", new_address_path, class: "btn btn-md btn-primary mt-2" %>
+      <% else %>
+        Log in to check out.
+        <%= link_to '<i class="fa-solid fa-right-to-bracket"></i> Log-In'.html_safe, '/users/sign_in', class: "btn btn-md btn-success" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @addresses.each do |address| %>
+      <% is_ship_to = address == @ship_to_address %>
+      <%= render address, is_cart: true, is_ship_to: is_ship_to %>
+    <% end %>
+  </div>
+
+  <% if user_signed_in? && @ship_to_address.present? %>
+    <div class="card bg-dark text-white mb-3">
+      <div class="card-header">Order Summary</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 text-end">
+            <strong>Subtotal: </strong><%= number_to_currency(@sub_total) %><br>
+            <strong>Shipping: </strong><%= number_to_currency(@shipping) %><br>
+            <hr>
+            <strong>GST: </strong><%= number_to_currency(@gst) %><br>
+            <strong>PST: </strong><%= number_to_currency(@pst) %><br>
+            <strong>HST: </strong><%= number_to_currency(@hst) %><br>
+            <hr>
+            <strong>Total: </strong><%= number_to_currency(@total) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-end">
+            <%= button_to '<i class="fa-solid fa-cash-register"></i> Submit Order'.html_safe, {controller: "sales_orders", action: "submit_order", address_id: 1}, class: "btn btn-lg btn-primary mt-2" %>
+            <%#= button_to '<i class="fa-solid fa-cash-register"></i> Submit Order'.html_safe, { controller: "sales_orders", action: "submit_order", cart_items: @cart_items, ship_to_address: @ship_to_address }, class: "btn btn-lg btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
 <% else %>
   Cart is empty.
 <% end %>

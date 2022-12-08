@@ -1,14 +1,18 @@
 <div class="card bg-dark text-white mb-3">
   <div class="card-header">Addresses</div>
   <div class="card-body">
-    <%= link_to "New address", new_address_path, class: "btn btn-md btn-primary mt-2" %>
+    <% if user_signed_in? %>
+      <%= link_to "New address", new_address_path, class: "btn btn-md btn-primary mt-2" %>
+    <% else %>
+      You must be logged in to see this page.
+    <% end %>
   </div>
 </div>
 
-<div class="row" id="sortable-wrapper">
-  <% @addresses.each do |address| %>
-    <%= render address %>
-  <% end %>
-</div>
-
-
+<% if user_signed_in? %>
+  <div class="row" id="sortable-wrapper">
+    <% @addresses.each do |address| %>
+      <%= render address %>
+    <% end %>
+  </div>
+<% end %>

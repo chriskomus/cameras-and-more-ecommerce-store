@@ -1,9 +1,9 @@
 <% if price.present? && price > 0 %>
   <% if list_price.present? && list_price > 0 %>
-    <del><%= Preference.find_by(setting: "currency").value %><%= list_price %></del>
-    <strong class="text-success"><%= Preference.find_by(setting: "currency").value %><%= price %></strong>
+    <del><%= number_to_currency(list_price) %></del>
+    <strong class="text-success"><%= number_to_currency(price) %></strong>
   <% else %>
-    <%= Preference.find_by(setting: "currency").value %><%= price %>
+    <%= number_to_currency(price) %>
   <% end %>
 <% else %>
   <%= Preference.find_by(setting: "product_no_price").value %>

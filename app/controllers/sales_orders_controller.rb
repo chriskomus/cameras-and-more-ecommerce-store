@@ -21,6 +21,34 @@ class SalesOrdersController < ApplicationController
   def edit
   end
 
+  def submit_order
+    if params[:address_id].present?
+      address = Address.find_by_id(params[:address_id])
+
+      if address.present?
+        begin
+          ensure_ship_to_session_exists
+          session[:ship_to_address] = params[:address_id]
+
+          respond_to do |format|
+            format.html { redirect_to carts_path, notice: address.address_one + " was selected as ship to address." }
+            format.json { render :show, status: :ok, location: address }
+          end
+        rescue
+          respond_to do |format|
+            format.html { redirect_to carts_path, error: address.address_one + " cannot be selected." }
+            format.json { render json: address.errors, status: :unprocessable_entity }
+          end
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to carts_path, error: "Address cannot be selected." }
+          format.json { render json: address.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  end
+
   # POST /sales_orders or /sales_orders.json
   def create
     # @sales_order = SalesOrder.new(sales_order_params)

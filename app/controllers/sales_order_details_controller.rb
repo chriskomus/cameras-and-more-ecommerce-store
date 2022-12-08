@@ -1,5 +1,5 @@
 class SalesOrderDetailsController < ApplicationController
-  before_action :set_sales_order_detail, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, :set_sales_order_detail, only: %i[ show edit update destroy ]
 
   add_breadcrumb "Home", :root_path
 

@@ -1,5 +1,8 @@
-<div class="col-lg-4 col-sm-6 mb-3 sortable-item" id="<%= dom_id address %>">
-  <div class="card h-100">
+<div class="col-lg-4 col-sm-6 mb-3" id="<%= dom_id address %>">
+  <div class="card h-100 <%= defined?(is_cart) && is_cart && defined?(is_ship_to) && is_ship_to ? 'bg-success' : '' %>">
+    <% if defined?(is_cart) && is_cart && defined?(is_ship_to) && is_ship_to %>
+    <div class="card-header">Shipping to This Address</div>
+    <% end %>
     <div class="card-body">
       <div class="row" id="top-container-19">
         <div class="col-sm-12">
@@ -38,8 +41,15 @@
       </div>
     </div>
     <div class="card-footer">
-      <%= link_to '<i class="fa-solid fa-pen"></i>'.html_safe, edit_address_path(address), class: "btn btn-md btn-primary" %>
-      <%= button_to '<i class="fa-solid fa-delete-left"></i>'.html_safe, address, method: :delete, class: "btn btn-md btn-danger" %>
+      <% if defined?(is_cart) && is_cart %>
+        <% if defined?(is_ship_to) && !is_ship_to %>
+          <%= button_to '<i class="fa-solid fa-plus"></i> Ship to This Address'.html_safe, {controller: "carts", action: "ship_to", address_id: address.id}, class: "btn btn-md btn-success me-2" %>
+        <% end %>
+      <% else %>
+        <%= link_to '<i class="fa-solid fa-pen"></i>'.html_safe, edit_address_path(address), class: "btn btn-md btn-primary" %>
+        <%= button_to '<i class="fa-solid fa-delete-left"></i>'.html_safe, address, method: :delete, class: "btn btn-md btn-danger" %>
+      <% end %>
+
     </div>
   </div>
 </div>
