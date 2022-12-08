@@ -23,6 +23,18 @@ ActiveAdmin.register Product do
     f.actions
   end
 
+  index do
+    selectable_column
+    id_column
+    column :title
+    column :sku
+    column :description
+    column :quantity
+    column :price
+    column :list_price
+    column :categories
+  end
+
   show do
     attributes_table do
       row :title
