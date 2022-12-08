@@ -94,7 +94,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-end">
-            <%= button_to '<i class="fa-solid fa-cash-register"></i> Submit Order'.html_safe, {controller: "sales_orders", action: "submit_order", address_id: 1}, class: "btn btn-lg btn-primary mt-2" %>
+            <%= button_to '<i class="fa-solid fa-cash-register"></i> Submit Order'.html_safe, { controller: "sales_orders", action: "submit_order", cart_items: @cart_items, ship_to_address: @ship_to_address}, class: "btn btn-lg btn-primary mt-2" %>
             <%#= button_to '<i class="fa-solid fa-cash-register"></i> Submit Order'.html_safe, { controller: "sales_orders", action: "submit_order", cart_items: @cart_items, ship_to_address: @ship_to_address }, class: "btn btn-lg btn-primary" %>
           </div>
         </div>

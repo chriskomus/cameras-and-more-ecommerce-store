@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   post 'carts/remove_from_cart'
   post 'carts/update_cart'
   post 'carts/ship_to'
-  post 'sales_order/submit_order'
+  post 'sales_orders/submit_order'
 
   resources :sales_order_details
   resources :sales_orders
