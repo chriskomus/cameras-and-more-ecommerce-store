@@ -26,14 +26,14 @@
             <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-cart-shopping"></i></span> Cart'.html_safe, carts_path, class: "nav-link" %>
           </li>
           <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="d-none d-xxl-inline"><i class="fa-solid fa-user"></i> </span>Account</a>
-            <div class="dropdown-menu" data-bs-popper="none">
-              <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-file-invoice-dollar"></i></span> Past Orders'.html_safe, sales_orders_path, class: "dropdown-item" %>
-              <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-house"></i></span> Addresses'.html_safe, addresses_path, class: "dropdown-item" %>
-              <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-right-from-bracket"></i></span> Log-Out'.html_safe, '/users/sign_out', class: "dropdown-item" %>
-            </div>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="d-none d-xxl-inline"><i class="fa-solid fa-user"></i> </span>Account</a>
+              <div class="dropdown-menu" data-bs-popper="none">
+                <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-file-invoice-dollar"></i></span> Past Orders'.html_safe, sales_orders_path, class: "dropdown-item" %>
+                <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-house"></i></span> Addresses'.html_safe, addresses_path, class: "dropdown-item" %>
+                <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-right-from-bracket"></i></span> Log-Out'.html_safe, '/users/sign_out', class: "dropdown-item" %>
+              </div>
+            </li>
           <% else %>
             <li class="nav-item">
               <%= link_to '<span class="d-none d-xxl-inline"><i class="fa-solid fa-right-to-bracket"></i></span> Log-In'.html_safe, '/users/sign_in', class: "nav-link" %>
@@ -41,13 +41,18 @@
           <% end %>
         </ul>
         <div class="d-flex mb-0">
-          <div class="input-group">
-            <input type="text" class="form-control" id="site-search-input"
-                   name="site-search-input">
-            <button class="btn btn-secondary" type="button" id="search-button" name="search-button"
-                    data-bs-toggle="modal" data-bs-target="#search-popup">Search
-            </button>
-          </div>
+          <%= form_with(url: '/products', method: 'get', local: true, class: "input-group") do |form| %>
+            <%= text_field_tag :main_search, params[:main_search], class: 'form-control' %>
+            <%= select_tag :category_id, options_from_collection_for_select(Category.order(:title).all, 'id', 'title'), {multiple: false, include_blank: 'Search all products...', class: 'form-select'} %>
+<!--            <select class="form-select">-->
+<!--              <option selected>Search All Products...</option>-->
+<!--              <option disabled="disabled" value="---------------">---------------</option>-->
+              <%# @categories.each do |category| %>
+<!--                <option value="<%#= category.id %>"><%#= category.title %></option>-->
+              <%# end %>
+<!--            </select>-->
+            <%= submit_tag("Search", class: "btn btn-secondary") %>
+          <% end %>
         </div>
       </div>
     </div>

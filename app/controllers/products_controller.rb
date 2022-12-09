@@ -1,16 +1,43 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
-  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Home", :root_path, options: {class: "breadcrumb-item"}
 
-  # GET /products or /products.json
+  # GET /products_filtered or /products_filtered.json
   def index
     add_breadcrumb "Products", products_path, :title => "Products"
 
-    @products = Product.page(params[:page])
+    @products = []
+
+    if params[:category_id].present?
+      search_category = Category.find_by(id: params[:category_id])
+      products_filtered = search_category.products
+    else
+      products_filtered = Product.all
+    end
+
+    if params[:filter].present?
+      if params[:filter] == "sale"
+        products_filtered = products_filtered.where(list_price: 0...)
+      elsif params[:filter] == "new"
+        products_filtered = products_filtered.where(created_at: 3.days.ago..)
+      elsif params[:filter] == "updated"
+        products_filtered = products_filtered.where(updated_at: 3.days.ago.., created_at: ...3.days.ago)
+      end
+    end
+
+    if params[:search].present?
+      search = params[:search]
+    elsif params[:main_search].present?
+      search = params[:main_search]
+    else
+      search = ""
+    end
+
+    @products = products_filtered.search(search).page(params[:page])
   end
 
-  # GET /products/1 or /products/1.json
+  # GET /products_filtered/1 or /products_filtered/1.json
   def show
 
     if @product.categories.present?
@@ -24,16 +51,16 @@ class ProductsController < ApplicationController
     add_breadcrumb @product.title, @album, title: @product.title
   end
 
-  # GET /products/new
+  # GET /products_filtered/new
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
+  # GET /products_filtered/1/edit
   def edit
   end
 
-  # POST /products or /products.json
+  # POST /products_filtered or /products_filtered.json
   def create
     # @product = Product.new(product_params)
     #
@@ -48,7 +75,7 @@ class ProductsController < ApplicationController
     # end
   end
 
-  # PATCH/PUT /products/1 or /products/1.json
+  # PATCH/PUT /products_filtered/1 or /products_filtered/1.json
   def update
     # respond_to do |format|
     #   if @product.update(product_params)
@@ -61,7 +88,7 @@ class ProductsController < ApplicationController
     # end
   end
 
-  # DELETE /products/1 or /products/1.json
+  # DELETE /products_filtered/1 or /products_filtered/1.json
   def destroy
     # @product.destroy
     #
@@ -72,13 +99,14 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:title, :sku, :description, :price, :quantity)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:title, :sku, :description, :price, :quantity)
+  end
 end

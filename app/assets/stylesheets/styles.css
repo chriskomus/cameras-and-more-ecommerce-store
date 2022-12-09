@@ -4519,18 +4519,31 @@ textarea.form-control-lg {
   border-radius: var(--bs-breadcrumb-border-radius);
 }
 
-.breadcrumb-item + .breadcrumb-item {
+.breadcrumb li + li {
   padding-left: var(--bs-breadcrumb-item-padding-x);
 }
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb li + li::before {
   float: left;
   padding-right: var(--bs-breadcrumb-item-padding-x);
   color: var(--bs-breadcrumb-divider-color);
-  content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+  content: var(--bs-breadcrumb-divider, " / ") /* rtl: var(--bs-breadcrumb-divider, "/") */;
 }
-.breadcrumb-item.active {
+.breadcrumb li.active {
   color: var(--bs-breadcrumb-item-active-color);
 }
+
+/*.breadcrumb-item + .breadcrumb-item {*/
+/*  padding-left: var(--bs-breadcrumb-item-padding-x);*/
+/*}*/
+/*.breadcrumb-item + .breadcrumb-item::before {*/
+/*  float: left;*/
+/*  padding-right: var(--bs-breadcrumb-item-padding-x);*/
+/*  color: var(--bs-breadcrumb-divider-color);*/
+/*  content: var(--bs-breadcrumb-divider, " / ") !* rtl: var(--bs-breadcrumb-divider, "/") *!;*/
+/*}*/
+/*.breadcrumb-item.active {*/
+/*  color: var(--bs-breadcrumb-item-active-color);*/
+/*}*/
 
 .pagination {
   --bs-pagination-padding-x: 0.75rem;

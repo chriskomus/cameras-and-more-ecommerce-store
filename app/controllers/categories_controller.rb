@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
       else
         products = @category.products
       end
-      @category_products = products.page(params[:page])
+      @category_products = products.search(params[:search]).page(params[:page])
     else
       @category_products = []
     end
