@@ -117,30 +117,32 @@ class EbayService
   end
 end
 
-# search_terms = ["nikon", "canon camera", "dash cam", "security camera",
-#                 "webcam", "lens", "pentax", "kodak", "minolta", "camera",
-#                 "iphone", "tripod", "viewfinder"]
-#
-# search_terms.each_with_index do |s, i|
-#   ebay_service = EbayService.new(s)
-#   ebay_service.clear_database if i.zero?
-#   ebay_service.add_products
-#   ebay_service.log_database_count
-# end
+search_terms = ["nikon", "canon camera", "dash cam", "security camera",
+                "webcam", "lens", "pentax", "kodak", "minolta", "camera",
+                "iphone", "tripod", "viewfinder"]
+
+search_terms = ["sony"]
+
+search_terms.each_with_index do |s, i|
+  ebay_service = EbayService.new(s)
+  # ebay_service.clear_database if i.zero?
+  ebay_service.add_products
+  ebay_service.log_database_count
+end
 
 
 # Provincial tax rates
-Province.create!(name: 'Alberta', gst: 0.05, pst: 0, hst: 0)
-Province.create!(name: 'British Columbia', gst: 0.05, pst: 0.07, hst: 0)
-Province.create!(name: 'Manitoba', gst: 0.05, pst: 0.07, hst: 0)
-Province.create!(name: 'New Brunswick', gst: 0, pst: 0, hst: 0.15)
-Province.create!(name: 'Newfoundland and Labrador', gst: 0, pst: 0, hst: 0.15)
-Province.create!(name: 'Northwest Territories', gst: 0.05, pst: 0, hst: 0)
-Province.create!(name: 'Nova Scotia', gst: 0, pst: 0, hst: 0.15)
-Province.create!(name: 'Nunavut', gst: 0.05, pst: 0, hst: 0)
-Province.create!(name: 'Ontario', gst: 0, pst: 0, hst: 0.13)
-Province.create!(name: 'Prince Edward Island', gst: 0, pst: 0, hst: 0.15)
-Province.create!(name: 'Quebec', gst: 0.05, pst: 0.09975, hst: 0)
-Province.create!(name: 'Saskatchewan', gst: 0.05, pst: 0.06, hst: 0)
-Province.create!(name: 'Yukon', gst: 0.05, pst: 0, hst: 0)
+# Province.create!(name: 'Alberta', gst: 0.05, pst: 0, hst: 0)
+# Province.create!(name: 'British Columbia', gst: 0.05, pst: 0.07, hst: 0)
+# Province.create!(name: 'Manitoba', gst: 0.05, pst: 0.07, hst: 0)
+# Province.create!(name: 'New Brunswick', gst: 0, pst: 0, hst: 0.15)
+# Province.create!(name: 'Newfoundland and Labrador', gst: 0, pst: 0, hst: 0.15)
+# Province.create!(name: 'Northwest Territories', gst: 0.05, pst: 0, hst: 0)
+# Province.create!(name: 'Nova Scotia', gst: 0, pst: 0, hst: 0.15)
+# Province.create!(name: 'Nunavut', gst: 0.05, pst: 0, hst: 0)
+# Province.create!(name: 'Ontario', gst: 0, pst: 0, hst: 0.13)
+# Province.create!(name: 'Prince Edward Island', gst: 0, pst: 0, hst: 0.15)
+# Province.create!(name: 'Quebec', gst: 0.05, pst: 0.09975, hst: 0)
+# Province.create!(name: 'Saskatchewan', gst: 0.05, pst: 0.06, hst: 0)
+# Province.create!(name: 'Yukon', gst: 0.05, pst: 0, hst: 0)
 

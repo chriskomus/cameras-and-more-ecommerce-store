@@ -1,4 +1,5 @@
 <%= render 'layouts/card', heading: @category.title, body: @category.description.html_safe %>
+<%= render 'layouts/sales' %>
 
 <div class="row" id="sortable-wrapper">
   <%= paginate @category_products, remote: true %>

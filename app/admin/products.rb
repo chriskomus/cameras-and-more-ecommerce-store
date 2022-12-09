@@ -23,6 +23,19 @@ ActiveAdmin.register Product do
     f.actions
   end
 
+  index do
+    selectable_column
+    id_column
+    column :title
+    column :sku
+    column :description
+    column :price
+    column :list_price
+    column :categories
+    column :created_at
+    column :updated_at
+  end
+
   show do
     attributes_table do
       row :title
@@ -34,9 +47,10 @@ ActiveAdmin.register Product do
       end
       row :sku
       row :description
-      row :quantity
       row :price
       row :list_price
+      row :created_at
+      row :updated_at
     end
   end
 

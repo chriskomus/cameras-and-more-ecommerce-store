@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    add_breadcrumb "Products", products_path, :title => "Products"
+    add_breadcrumb "All Categories", categories_path, :title => "All Categories"
 
     @categories = Category.page(params[:page])
   end
@@ -13,8 +13,21 @@ class CategoriesController < ApplicationController
   # GET /categories/1 or /categories/1.json
   def show
     if @category.products.present?
-      # @category_products = @category.products.sort_by &:title
-      @category_products = @category.products.page(params[:page])
+      products = []
+      if params[:filter].present?
+        if params[:filter] == "sale"
+          products = @category.products.where(list_price: 0...)
+        elsif params[:filter] == "new"
+          products = @category.products.where(created_at: 3.days.ago..)
+        elsif params[:filter] == "updated"
+          products = @category.products.where(updated_at: 3.days.ago.., created_at: ...3.days.ago)
+        else
+          products = @category.products
+        end
+      else
+        products = @category.products
+      end
+      @category_products = products.page(params[:page])
     else
       @category_products = []
     end
@@ -71,13 +84,14 @@ class CategoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_category
-      @category = Category.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:title, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_category
+    @category = Category.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:title, :description)
+  end
 end

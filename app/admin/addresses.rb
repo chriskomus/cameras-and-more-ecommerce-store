@@ -1,4 +1,23 @@
 ActiveAdmin.register Address do
+  menu false
+
+  show do |address|
+    attributes_table do
+      row :company
+      row :address_one
+      row :address_two
+      row :city
+      row :postal_code
+      row :province
+      row :country
+      row :email
+      row :website
+      row :phone
+      row :fax
+      row :notes
+      row :user
+    end
+  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
