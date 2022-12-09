@@ -1,8 +1,13 @@
+<%= render 'layouts/search', category_title: 'All Products' %>
 <%= render 'layouts/sales' %>
 
-<div class="row" id="sortable-wrapper">
-  <%= paginate @products, remote: true %>
-  <% @products.each do |product| %>
-    <%= render product %>
-  <% end %>
-</div>
+<% if @products.length > 0 %>
+  <div class="row" id="sortable-wrapper">
+    <%= paginate @products, remote: true %>
+    <% @products.each do |product| %>
+      <%= render product %>
+    <% end %>
+  </div>
+<% else %>
+  No products found.
+<% end %>

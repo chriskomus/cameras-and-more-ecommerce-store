@@ -1,9 +1,9 @@
 <div class="card bg-dark text-white mb-3">
   <div class="card-body">
     <p class="card-text">
-      <%= link_to '<i class="fa-solid fa-tags"></i> On Sale!'.html_safe, url_for( :filter => 'sale' ), class: "btn btn-md btn-warning me-2" %>
-      <%= link_to '<i class="fa-solid fa-hand-sparkles"></i> New!'.html_safe, url_for( :filter => 'new' ), class: "btn btn-md btn-success me-2" %>
-      <%= link_to '<i class="fa-solid fa-pen"></i> Updated'.html_safe, url_for( :filter => 'updated' ), class: "btn btn-md btn-success me-2" %>
+      <%= link_to '<i class="fa-solid fa-tags"></i> On Sale!'.html_safe, request.params.merge(filter: "sale"), class: "btn btn-md btn-warning me-2" %>
+      <%= link_to '<i class="fa-solid fa-hand-sparkles"></i> New!'.html_safe, request.params.merge(filter: "new"), class: "btn btn-md btn-success me-2" %>
+      <%= link_to '<i class="fa-solid fa-pen"></i> Updated'.html_safe, request.params.merge(filter: "updated"), class: "btn btn-md btn-success me-2" %>
       <%= link_to '<i class="fa-solid fa-reply-all"></i> See All'.html_safe, url_for, class: "btn btn-md btn-primary me-2" %>
     </p>
   </div>

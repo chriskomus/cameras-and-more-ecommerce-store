@@ -10,4 +10,12 @@ class Product < ApplicationRecord
   validates_numericality_of :quantity, only_numeric: true, allow_nil: true
 
   has_one_attached :main_image
+
+  def self.search(search)
+    if search
+      where(["UPPER(title) LIKE UPPER(?)", "%#{search}%"])
+    else
+      all
+    end
+  end
 end
