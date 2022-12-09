@@ -29,10 +29,11 @@ ActiveAdmin.register Product do
     column :title
     column :sku
     column :description
-    column :quantity
     column :price
     column :list_price
     column :categories
+    column :created_at
+    column :updated_at
   end
 
   show do
@@ -46,9 +47,10 @@ ActiveAdmin.register Product do
       end
       row :sku
       row :description
-      row :quantity
       row :price
       row :list_price
+      row :created_at
+      row :updated_at
     end
   end
 
